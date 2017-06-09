@@ -75,8 +75,8 @@ The key things the bot needed to understand are when a user is trying to:
 
 Once we knew what the bot needed to be able to do along with understanding how a user might naturally interact with it, it was relatively straight forward to break that down into intents, entities, and utterances. LUIS makes this very easy. We added the entities first, and then added intents in addition with utterances. The image below is a screen shot showing how to add an intent and an utterance or training data for the intent.
 
-- ![Adding an intent](/images/add_intent.png)
-- ![Add an utterance for intent](/images/add_utterance.png)
+- ![Adding an intent](images/add_intent.PNG)
+- ![Add an utterance for intent](images/add_utterance.PNG)
 
 ### Creating a bot using the Bot Framework ###
 
@@ -223,9 +223,9 @@ We started the project by using the Azure Portal to create a Bot Service deploym
 
 The image below show how to naviagate the Bot Service settings to turn on continuous integration.
 
-- ![Bot Service Settings](/images/add_ci_1.png)
-- ![Scroll continuous integration](/images/add_ci_2.png)
-- ![Set up integration source](/images/add_ci_3.png)
+- ![Bot Service Settings](images/add_ci_1.PNG)
+- ![Scroll continuous integration](images/add_ci_2.PNG)
+- ![Set up integration source](images/add_ci_3.PNG)
 
 Adding Facebook Messenger channel to the Microsoft bot Framework is a breeze. In Add a channel section of the Bot Framework, select Facebook Messenger. All you need to do is input Facebook Page ID, Facebook App ID, Facebook App Secret and Page Access Token. Just follow [this instruction](https://docs.microsoft.com/en-us/bot-framework/channel-connect-facebook) which is also linked on the set up page. Once that is done. You are all set! Your bot is now on Facebook Messenger.
 
