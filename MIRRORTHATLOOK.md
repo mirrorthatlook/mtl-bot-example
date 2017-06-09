@@ -23,11 +23,11 @@ In this project, Mirror That Look builds a shopping assistant bot that can reach
 - Allow users to change their search settings, including price range, gender, and retailers
 
 - Key technologies used
-	- Language Understanding Intelligent Service(https://www.luis.ai/)
-	- Microsoft Node.js Bot Framework(https://dev.botframework.com/)
-	- Azure API Managemnet(https://azure.microsoft.com/en-us/services/api-management/)
-	- Azure Bot Service(https://azure.microsoft.com/en-us/services/bot-service/)
-	- Mirror That Look API (https://developer.mirrorthatlook.com/)
+	- [Language Understanding Intelligent Service](https://www.luis.ai/)
+	- [Microsoft Node.js Bot Framework](https://dev.botframework.com/)
+	- [Azure API Managemnet](https://azure.microsoft.com/en-us/services/api-management/)
+	- [Azure Bot Service](https://azure.microsoft.com/en-us/services/bot-service/)
+	- [Mirror That Look API] (https://developer.mirrorthatlook.com/)
   
 ## Core Team:
 - Surat Teerapittayanon – CTO/Co-Founder, Mirror That Look
@@ -55,27 +55,28 @@ Mirror That look wanted to build a Facebook messenger bot but also wanted to be 
 ## Solution and steps ##
 Mirror That Look will have bot across various chat platforms. To start, a priority was given to getting a bot up on Facebook Messenger. The solution has four components. The first component was training a LUIS model. The second component was building the bot using the Bot Framework. The third component was having the visual search functionality exposed through an API, relying on Azure API Management. The fourth component was deploying the bot using Microsoft Bot Service.
 
-![Solution Architecture Diagram](images/architecture.png)
+![Solution Architecture Diagram](images/architecture.jpg)
 
 Mirror That Look had never used Microsoft's Bot Framework before this project.
 
 Following are the technical details for:
--Training a LUIS model
--Creating a bot using the Bot Framework
--Deploying the bot on Azure Bot Service and Facebook Messenger
+- Training a LUIS model
+- Creating a bot using the Bot Framework
+- Deploying the bot on Azure Bot Service and Facebook Messenger
 
 ### Training a LUIS model ###
 
 Before we started training the LUIS model. We had to know what we wanted the bot to be able to do, and also think about how users would naturally want to interact wtih the bot. This meant that we had to reach a balance between guiding the user and letting users interact with the bot in the same way they would naturally interact with a human shopping assistant. 
 The key things the bot needed to understand are when a user is trying to:
-    -Search for a new style
-    -Get the current gender they are searching for or update the gender
-    -Get the current price range or update the price range
-    -Help the user when they get stuck and navigate
+- Search for a new style
+- Get the current gender they are searching for or update the gender
+- Get the current price range or update the price range
+- Help the user when they get stuck and navigate
 
-Once we knew what the bot needed to be able to do along with understanding how a user might naturally interact with it, it was relatively straight forward to break that down into intents, entities, and utterances. LUIS makes this very easy. We added the entities first, and then added intents in addition with utterances. The image below is a screen shot showing how to add utterances for an intent.
+Once we knew what the bot needed to be able to do along with understanding how a user might naturally interact with it, it was relatively straight forward to break that down into intents, entities, and utterances. LUIS makes this very easy. We added the entities first, and then added intents in addition with utterances. The image below is a screen shot showing how to add an intent and an utterance or training data for the intent.
 
-![Adding utterances for an intent](/images/)
+- ![Adding an intent](/images/add_intent.png)
+- ![Add an utterance for intent](/images/add_utterance.png)
 
 ### Creating a bot using the Bot Framework ###
 
@@ -220,9 +221,11 @@ function mtlmirrorthatlook (base_url, imageUrl, gender, optionals, api_key) {
 ### Deploying the bot on Azure Bot Service and Facebook Messenger ###
 We started the project by using the Azure Portal to create a Bot Service deployment. We downloaded the project onto our local development machines and then push to a git repository. Since the Azure Bot service sits on top of the Azure App Service infrastructure, setting up continuous integration was straight forward. With this approach, the bot was deployed from the very beginning of the project.
 
-The image below show how to naviagate Bot Service settings to turn on continuous integration.
+The image below show how to naviagate the Bot Service settings to turn on continuous integration.
 
-![Turn on continuous integration](/images/)
+- ![Bot Service Settings](/images/add_ci_1.png)
+- ![Scroll continuous integration](/images/add_ci_2.png)
+- ![Set up integration source](/images/add_ci_3.png)
 
 Adding Facebook Messenger channel to the Microsoft bot Framework is a breeze. In Add a channel section of the Bot Framework, select Facebook Messenger. All you need to do is input Facebook Page ID, Facebook App ID, Facebook App Secret and Page Access Token. Just follow [this instruction](https://docs.microsoft.com/en-us/bot-framework/channel-connect-facebook) which is also linked on the set up page. Once that is done. You are all set! Your bot is now on Facebook Messenger.
 
@@ -236,7 +239,7 @@ General Lessons:
 
 Suggestions:
 - Developing with the bot framework's emulator is extremly helpful. A step further would be to be able to have the emulator's UI mock the UI of specific channels. We'd often have to deploy into production in order to see what things look like on Facebook Messenger.
-- Links to attachments (images, videos, etc.) on the bot framework's emulator is local and cannot be send to external server to download and further process the attachments. This makes it harder to test use cases like this on the bot framework's emulator. 
+- Links to attachments (images, videos, etc.) on the bot framework's emulator is local and cannot be sent to external server to download and further process the attachments. This makes it harder to test use cases like this on the bot framework's emulator. 
 
 ## Additional resources ##
 - [Mirror That Look](https://www.mirrorthatlook.com/)
