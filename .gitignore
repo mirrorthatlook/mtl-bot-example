@@ -1,0 +1,6 @@
+**/*/node_modules/
+typings/
+node_modules/
+.vscode
+*.js.map
+.env

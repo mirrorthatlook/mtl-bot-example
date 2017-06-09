@@ -1,0 +1,25 @@
+{
+  "name": "mtl-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "bluebird": "^3.5.0",
+    "botbuilder": "^3.8.1",
+    "botbuilder-azure": "3.0.2",
+    "dotenv-extended": "^2.0.0",
+    "filepicker": "^0.2.0",
+    "nodemon": "^1.11.0",
+    "request": "^2.81.0",
+    "request-promise": "^4.2.1",
+    "restify": "^4.3.0"
+  },
+  "devDependencies": {
+    "restify": "^4.3.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
