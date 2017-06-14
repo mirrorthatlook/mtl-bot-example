@@ -21,7 +21,7 @@ function mtlmirrorthatlook (base_url, imageURL, gender, optionals, api_key) {
     return upload(imageURL, {
       persist: true
     }).then(function(url){
-      let fullURL = `${base_url}image=${encodeURIComponent(url)}&gender=${gender}`;
+      let fullURL = `${base_url}?image=${encodeURIComponent(url)}&gender=${gender}`;
       if (Object.keys(optionals).length) {
         let optionString ='';
         for (opt in optionals) {

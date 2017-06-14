@@ -5,7 +5,7 @@
 const request = require('request-promise').defaults({encoding: null});
 
 function mtlmirrorthatlook (base_url, imageUrl, gender, optionals, api_key) {
-    let fullURL = `${base_url}image=${encodeURIComponent(imageUrl)}&gender=${gender}`;
+    let fullURL = `${base_url}?image=${encodeURIComponent(imageUrl)}&gender=${gender}`;
     if (Object.keys(optionals).length) {
         let optionString ='';
         for (opt in optionals) {
